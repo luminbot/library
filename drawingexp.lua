@@ -945,8 +945,7 @@ local drawing = {} do
 
         mt.Visible = true
 
-        local inner_mt = rawget(mt, "__OBJECT");
-        print(inner_mt)
+        local inner_mt = rawget(obj, "__OBJECT")
         return mt, inner_mt
     end
 end
