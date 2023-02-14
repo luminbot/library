@@ -324,6 +324,7 @@ local drawing = {} do
 
     function drawing:new(shape)
         local obj = Drawing.new(shape)
+        local inner_mt = rawget(obj, "__OBJECT")
         objexists[obj] = true
         local signalnames = {}
 
@@ -944,9 +945,7 @@ local drawing = {} do
         end
 
         mt.Visible = true
-
-        local inner_mt = rawget(obj, "__OBJECT")
-        return mt, inner_mt
+        return mt, inner_mt, "TEST"
     end
 end
 return drawing
